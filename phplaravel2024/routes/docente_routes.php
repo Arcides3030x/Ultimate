@@ -7,6 +7,7 @@ use App\Http\Controllers\DocenteController;
 Route::group(['prefix' => 'docentes' ,'middleware' => 'auth_docentes'], function () {
     Route::get('/', [DocenteController::class, 'index'])->name('docentes.index');
     Route::get('/show/{id}', [DocenteController::class, 'show'])->name('docentes.show');
+    
     Route::get('/create', [DocenteController::class, 'create'])->name('docentes.create');
     Route::post('/create', [DocenteController::class, 'store'])->name('docentes.store');
     Route::get('/edit/{id}', [DocenteController::class, 'edit'])->name('docentes.edit');
